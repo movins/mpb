@@ -8,26 +8,22 @@ const $root = ($protobuf.roots['default'] || ($protobuf.roots['default'] = new $
 .addJSON(PbProxy.addJSON({
   com: {
     nested: {
-      bdgamelive: {
+      test: {
         nested: {
-          pb: {
+          common: {
+            options: {
+              java_outer_classname: "CommonResult"
+            },
             nested: {
-              common: {
-                options: {
-                  java_outer_classname: "CommonResult"
-                },
-                nested: {
-                  Result: {
-                    fields: {
-                      code: {
-                        type: "int32",
-                        id: 1
-                      },
-                      message: {
-                        type: "string",
-                        id: 2
-                      }
-                    }
+              Result: {
+                fields: {
+                  code: {
+                    type: "int32",
+                    id: 1
+                  },
+                  message: {
+                    type: "string",
+                    id: 2
                   }
                 }
               }
@@ -37,5 +33,5 @@ const $root = ($protobuf.roots['default'] || ($protobuf.roots['default'] = new $
       }
     }
   }
-}, 'com.nested.bdgamelive.nested.pb.nested.common,com.nested.yy.nested.recommend.nested.common'))
+}, ''))
 export { $root as default };

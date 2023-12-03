@@ -1,6 +1,6 @@
 syntax = "proto3";
 option objc_class_prefix = "PROTO";
-package tcpToRpc;
+package com.planet.pojo;
 
 option java_package = "com.planet.pojo";
 option optimize_for = LITE_RUNTIME;

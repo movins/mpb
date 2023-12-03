@@ -6,10 +6,10 @@
 import {BaseProto, ProtoConstructor} from '../../index'
 import * as anchorinfo from './pb'
 
-type PCheckAnchorCertMaskReq = anchorinfo.com.bdgamelive.pb.anchorbase.CheckAnchorCertMaskReq
+type PCheckAnchorCertMaskReq = anchorinfo.com.test.anchorbase.CheckAnchorCertMaskReq
 interface CheckAnchorCertMaskReq extends BaseProto<PCheckAnchorCertMaskReq>, PCheckAnchorCertMaskReq {}
 export declare var CheckAnchorCertMaskReq: ProtoConstructor<CheckAnchorCertMaskReq>
 
-type PCheckAnchorCertMaskResp = anchorinfo.com.bdgamelive.pb.anchorbase.CheckAnchorCertMaskResp
+type PCheckAnchorCertMaskResp = anchorinfo.com.test.anchorbase.CheckAnchorCertMaskResp
 interface CheckAnchorCertMaskResp extends BaseProto<PCheckAnchorCertMaskResp>, PCheckAnchorCertMaskResp {}
 export declare var CheckAnchorCertMaskResp: ProtoConstructor<CheckAnchorCertMaskResp>

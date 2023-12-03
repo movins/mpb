@@ -8,84 +8,80 @@ const $root = ($protobuf.roots['default'] || ($protobuf.roots['default'] = new $
 .addJSON(PbProxy.addJSON({
   com: {
     nested: {
-      bdgamelive: {
+      test: {
         nested: {
-          pb: {
+          anchorbase: {
+            options: {
+              java_outer_classname: "AnchorInfo",
+              objc_class_prefix: "BDG"
+            },
             nested: {
-              anchorbase: {
-                options: {
-                  java_outer_classname: "AnchorInfo",
-                  objc_class_prefix: "BDG"
-                },
+              CheckAnchorCertMaskReq: {
+                fields: {},
                 nested: {
-                  CheckAnchorCertMaskReq: {
-                    fields: {},
-                    nested: {
-                      Type: {
-                        values: {
-                          none: 0,
-                          max: 1001,
-                          min: 1016
-                        }
-                      }
-                    }
-                  },
-                  CheckAnchorCertMaskResp: {
-                    fields: {
-                      result: {
-                        type: "com.bdgamelive.pb.common.Result",
-                        id: 1
-                      },
-                      isCertMask: {
-                        type: "bool",
-                        id: 2
-                      },
-                      test64: {
-                        type: "int64",
-                        id: 3
-                      },
-                      teststr: {
-                        type: "string",
-                        id: 4
-                      },
-                      test32: {
-                        type: "int32",
-                        id: 5
-                      },
-                      testarr: {
-                        rule: "repeated",
-                        type: "string",
-                        id: 6
-                      }
-                    },
-                    nested: {
-                      Type: {
-                        values: {
-                          none: 0,
-                          max: 1001,
-                          min: 1017
-                        }
-                      }
+                  Type: {
+                    values: {
+                      none: 0,
+                      max: 1001,
+                      min: 1016
                     }
                   }
                 }
               },
-              common: {
-                options: {
-                  java_outer_classname: "CommonResult"
+              CheckAnchorCertMaskResp: {
+                fields: {
+                  result: {
+                    type: "com.test.common.Result",
+                    id: 1
+                  },
+                  isCertMask: {
+                    type: "bool",
+                    id: 2
+                  },
+                  test64: {
+                    type: "int64",
+                    id: 3
+                  },
+                  teststr: {
+                    type: "string",
+                    id: 4
+                  },
+                  test32: {
+                    type: "int32",
+                    id: 5
+                  },
+                  testarr: {
+                    rule: "repeated",
+                    type: "string",
+                    id: 6
+                  }
                 },
                 nested: {
-                  Result: {
-                    fields: {
-                      code: {
-                        type: "int32",
-                        id: 1
-                      },
-                      message: {
-                        type: "string",
-                        id: 2
-                      }
+                  Type: {
+                    values: {
+                      none: 0,
+                      max: 1001,
+                      min: 1017
                     }
+                  }
+                }
+              }
+            }
+          },
+          common: {
+            options: {
+              java_outer_classname: "CommonResult"
+            },
+            nested: {
+              Result: {
+                fields: {
+                  code: {
+                    type: "int32",
+                    id: 1
+                  },
+                  message: {
+                    type: "string",
+                    id: 2
                   }
                 }
               }
@@ -95,5 +91,5 @@ const $root = ($protobuf.roots['default'] || ($protobuf.roots['default'] = new $
       }
     }
   }
-}, 'com.nested.bdgamelive.nested.pb.nested.common,com.nested.yy.nested.recommend.nested.common'))
+}, ''))
 export { $root as default };

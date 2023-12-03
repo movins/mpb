@@ -6,6 +6,6 @@
 import {BaseMap, MapConstructor} from '../../index'
 import * as result from './pb'
 
-type PResult = result.com.bdgamelive.pb.common.Result
+type PResult = result.com.test.common.Result
 interface Result extends BaseMap<PResult>, PResult {}
 export declare var Result: MapConstructor<Result>
