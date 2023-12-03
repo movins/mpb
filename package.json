@@ -1,6 +1,6 @@
 {
   "name": "@jemoo/mpb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "pb proto general",
   "author": "movinliao",
   "repository": {
@@ -44,6 +44,7 @@
     "proto": "node --trace-warnings build/scripts/index.js ts .\\build\\proto\\ .\\lib\\test\\ 'com.test.common' true"
   },
   "dependencies": {
+    "prettier": "^1.18.2",
     "protobufjs": "^6.10.2"
   },
   "devDependencies": {
@@ -60,7 +61,6 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "tslint": "^5.18.0",
-    "prettier": "^1.18.2",
     "tslint-config-prettier": "^1.18.0",
     "uglify-js": "^3.13.9"
   }

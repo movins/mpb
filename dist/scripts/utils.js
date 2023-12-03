@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 
 class Utils {
-  static kFileTips = `\/****\n * 该文件为脚本生成，请勿手动修改\n * 有问题请@liaoguoguang\n */\n`
+  static kFileTips = `\/****\n * 该文件为脚本生成，请勿手动修改\n * 有问题请@movinliao@163.com\n */\n`
   static kUriInsertKey = '// ====End====='
 
   static scanDirectory(dirPath, arr, exts) {
