@@ -20,7 +20,7 @@ function createConfig(isDev) {
 		output: {
 			path: path.join(__dirname, '../dist'),
 			filename: '[name].js',
-			library: 'ypb',
+			library: 'mpb',
 			libraryTarget: 'umd'
 		},
 		resolve: {

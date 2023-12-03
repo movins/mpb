@@ -1,0 +1,18 @@
+syntax = "proto3";
+option objc_class_prefix = "PROTO";
+package tcpToRpc;
+
+option java_package = "com.planet.pojo";
+option optimize_for = LITE_RUNTIME;
+message MsgReq {
+   string alias           = 1;  //  具体函数方法
+   map<string,string> opt = 3;  //  通用透传数据上下文
+   bytes req              = 2;   //  请求数据包
+}
+
+message MsgRsp {
+   int32 code  = 1;             // 返回值
+   map<string,string> opt = 2;  // 上下文
+   bytes rsp  = 3;              // 返回数据包
+   string message = 4;          // 错误信息
+}
