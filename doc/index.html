@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+</body>
+<!-- 用于本地开发 -->
+<script src="/devServer/index.js"></script>
+
+<script>
+	console.info('ypb test begin root=', ypb)
+
+  const {anchorinfo, liveendrecommend} = ypb
+  const req1 = new liveendrecommend.AnchorLiveEndConfigReq()
+  const bytes1 = req1.marshal()
+  console.info('ypb AnchorLiveEndConfigReq marshal===bytes', bytes1)
+
+  const rsp1 = new liveendrecommend.AnchorLiveEndConfigRsp()
+  rsp1.unmarshal(new Uint8Array([10, 2, 8, 1]).buffer)
+  console.info('ypb AnchorLiveEndConfigRsp unmarshal===bytes', rsp1)
+
+  const req = new anchorinfo.CheckAnchorCertMaskResp()
+  req.test64 = 99999999999999999
+  req.result = {code: 2000}
+  req.teststr = '测试实施是实施是上市是是是11121212121'
+  req.test32 = 72221212
+  req.testarr = ['撒范德萨asdf', '萨法asd发送121212']
+
+  const kCount = 1000000
+  let lt = window.performance.now()
+  for(let index = 0; index < kCount; ++index) {
+    req.marshal()
+  }
+  lt = window.performance.now() - lt
+  console.info('ypb marshal lt=', lt / kCount)
+
+  const bytes = req.marshal()
+  lt = window.performance.now()
+  for(let index = 0; index < kCount; ++index) {
+    req.unmarshal(bytes)
+  }
+  lt = window.performance.now() - lt
+  console.info('ypb unmarshal lt=', lt / kCount)
+
+  console.info('ypb marshal===bytes', bytes)
+  console.info('yyp test buffer', bytes.slice().buffer)
+
+  const rsp = new anchorinfo.CheckAnchorCertMaskResp()
+  console.info('ypb calculate===', rsp.calculate(bytes))
+
+  rsp.begin(bytes)
+  console.info('ypb byteLength===', rsp.byteLength)
+  rsp.end()
+  // rsp.unmarshal(bytes)
+  console.info('ypb unmarshal===bytes', rsp)
+  console.info('ypb toJSON======', rsp.toJSON())
+</script>
+</html>

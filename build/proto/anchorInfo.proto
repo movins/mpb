@@ -1,0 +1,29 @@
+syntax = "proto3";
+import "result.proto";
+package com.test.anchorbase;
+option java_outer_classname = "AnchorInfo";
+option objc_class_prefix = "BDG";
+
+message CheckAnchorCertMaskReq {
+  enum Type {
+    none = 0;
+    max = 1001;
+    min = 1016;
+  }
+}
+
+message CheckAnchorCertMaskResp {
+  enum Type {
+    none = 0;
+    max = 1001;
+    min = 1017;
+  }
+  com.test.common.Result  result = 1; // 通用返回结果类
+  bool isCertMask = 2; // true:已认证 false:未认证
+  int64 test64 = 3;
+  string teststr = 4;
+  int32 test32 = 5;
+  repeated string testarr = 6;
+}
+
+

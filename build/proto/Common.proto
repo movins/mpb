@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.test.common;
+option java_outer_classname = "Common";
+option objc_class_prefix = "BDG";
+
+/**
+*   通用返回结果类
+*/
+message Result {
+	int32 code = 1; // 返回码0 -> 成功, 其他失败
+	string message = 2; // 返回消息
+}
