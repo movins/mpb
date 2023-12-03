@@ -41,7 +41,7 @@
     "pub": "yarn build && npm publish --registry=https://registry.npmjs.org",
     "build:gulp": "gulp --gulpfile build/gulp.js",
     "make": "rimraf ./lib/test && yarn proto",
-    "proto": "node --trace-warnings build/scripts/index.js ts .\\build\\proto\\ .\\lib\\test\\ '' true"
+    "proto": "node --trace-warnings build/scripts/index.js ts .\\build\\proto\\ .\\lib\\test\\ 'com.test.common' true"
   },
   "dependencies": {
     "protobufjs": "^6.10.2"
