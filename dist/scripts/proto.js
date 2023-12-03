@@ -66,7 +66,7 @@ class Proto {
       const dest = Path.join(this._out, this._toCamel(name).toLowerCase(), '\\pb')
       Utils.makeDirs(dest)
       const args = ['--target', 'json-module', '--wrap', 'es6', '--keep-case', path]
-      const lib = (!this._dev && '@yy/ypb') || '../../../index'
+      const lib = (!this._dev && '@jemoo/mpb') || '../../../index'
       pbjs.main(args, (err, output) => {
         if (err) {
           throw err
@@ -93,7 +93,7 @@ class Proto {
     Utils.makeDirs(dest)
     const temp = dest + '\\index.js'
     const define = dest + '\\index.d.ts'
-    const lib = (!this._dev && '@yy/ypb') || '../../../index'
+    const lib = (!this._dev && '@jemoo/mpb') || '../../../index'
     pbjs.main(['-t', 'static-module', '-w', 'commonjs', '--keep-case', path], (err, output) => {
       Utils.writeFile(temp, output)
       pbts.main([temp], (err, definitions) => {

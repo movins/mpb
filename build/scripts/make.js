@@ -178,7 +178,7 @@ class Make {
       // if (classes.length || structs.length) {
       const hasProto = classes.length || protos.length
       const isTs = this._type === 'ts'
-      const lib = (!this._dev && '@yy/ypb') || '../../index'
+      const lib = (!this._dev && '@jemoo/mpb') || '../../index'
       const bimports = []
       const bimports_ts = []
       if (hasProto) {
