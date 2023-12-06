@@ -1,5 +1,6 @@
-export const ${class} = (val) => {
-  const result = new MapProto(${root}, '${type}')
-  val && result.assign(val)
-  return result
+export class ${class} extends MapProto {
+  constructor(val) {
+    super(${root}, '${type}')
+    this.assign(val)
+  }
 }

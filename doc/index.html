@@ -12,16 +12,16 @@
 <script src="/devServer/index.js"></script>
 
 <script>
-	console.info('mpb test begin root=', mpb)
+	console.info('ypb test begin root=', ypb)
 
-  const {anchorinfo, liveendrecommend} = mpb
+  const {anchorinfo, liveendrecommend} = ypb
   const req1 = new liveendrecommend.AnchorLiveEndConfigReq()
   const bytes1 = req1.marshal()
-  console.info('mpb AnchorLiveEndConfigReq marshal===bytes', bytes1)
+  console.info('ypb AnchorLiveEndConfigReq marshal===bytes', bytes1)
 
   const rsp1 = new liveendrecommend.AnchorLiveEndConfigRsp()
   rsp1.unmarshal(new Uint8Array([10, 2, 8, 1]).buffer)
-  console.info('mpb AnchorLiveEndConfigRsp unmarshal===bytes', rsp1)
+  console.info('ypb AnchorLiveEndConfigRsp unmarshal===bytes', rsp1)
 
   const req = new anchorinfo.CheckAnchorCertMaskResp()
   req.test64 = 99999999999999999
@@ -36,7 +36,7 @@
     req.marshal()
   }
   lt = window.performance.now() - lt
-  console.info('mpb marshal lt=', lt / kCount)
+  console.info('ypb marshal lt=', lt / kCount)
 
   const bytes = req.marshal()
   lt = window.performance.now()
@@ -44,19 +44,19 @@
     req.unmarshal(bytes)
   }
   lt = window.performance.now() - lt
-  console.info('mpb unmarshal lt=', lt / kCount)
+  console.info('ypb unmarshal lt=', lt / kCount)
 
-  console.info('mpb marshal===bytes', bytes)
+  console.info('ypb marshal===bytes', bytes)
   console.info('yyp test buffer', bytes.slice().buffer)
 
   const rsp = new anchorinfo.CheckAnchorCertMaskResp()
-  console.info('mpb calculate===', rsp.calculate(bytes))
+  console.info('ypb calculate===', rsp.calculate(bytes))
 
   rsp.begin(bytes)
-  console.info('mpb byteLength===', rsp.byteLength)
+  console.info('ypb byteLength===', rsp.byteLength)
   rsp.end()
   // rsp.unmarshal(bytes)
-  console.info('mpb unmarshal===bytes', rsp)
-  console.info('mpb toJSON======', rsp.toJSON())
+  console.info('ypb unmarshal===bytes', rsp)
+  console.info('ypb toJSON======', rsp.toJSON())
 </script>
 </html>

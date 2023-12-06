@@ -196,7 +196,7 @@ export class MapProto<T extends Record<string, any> = Record<string, any>> imple
 
 export interface MapClass<T extends BaseMap<T>> {
   new(val?: Partial<T>): T
-  (val?: T): T
+  // (val?: T): T
 }
 
 export interface MapConstructor<T extends BaseMap<T>> extends MapClass<T> {

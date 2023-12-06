@@ -1,10 +1,26 @@
-export const ${class} = (val) => {
-  const result = new RootProto(${root}, '${type}', ${max}, ${min})
-  val && result.assign(val)
-  return result
+export class ${class} extends RootProto {
+  constructor(val) {
+    super(${root}, '${type}', ${max}, ${min})
+    this.assign(val)
+  }
+
+  static get maxType() {
+    return ${max}
+  }
+
+  static get minType() {
+    return ${min}
+  }
+
+  static get uri() {
+    return URI(${max}, ${min})
+  }
+
+  static get key() {
+    return '${name}.${class}'
+  }
+
+  static get types() {
+    return [${max}, ${min}]
+  }
 }
-${class}.minType = ${min}
-${class}.maxType = ${max}
-${class}.uri = URI(${max}, ${min})
-${class}.types = [${max}, ${min}]
-${class}.key = '${name}.${class}'

@@ -1,6 +1,6 @@
 /****
  * 该文件为脚本生成，请勿手动修改
- * 有问题请@liaoguoguang
+ * 有问题请@movinliao@163.com
  */
 
 import {BaseProto, ProtoConstructor} from '../../index'

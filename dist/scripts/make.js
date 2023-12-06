@@ -61,23 +61,21 @@ class Make {
   }
 
   _doWriteUris() {
-    if (!this._uris.length) {
-      return
-    }
     const dest = Path.join(this._out, `index.${this._type}`)
     let content = ''
     if (Utils.existed(dest)) {
       content = Utils.readFile(dest) || ''
     }
 
+    const length = this._uris.length
     this._uris.push('')
     let uris = this._uris.join(',\n')
     const insertKey =  `  ${Utils.kUriInsertKey}`
-    uris && (uris += insertKey)
+    uris += insertKey
     if (content.indexOf(insertKey) > -1) {
       content = content.replace(insertKey, uris)
     } else {
-      content = `${Utils.kFileTips}import * as roots from './roots'\n\nexport const kUris${this._type === 'ts' && ': Record<string, any>' || ''} = {\n${uris}\n}\n\nexport * from './roots'\n`
+      content = `${Utils.kFileTips}${(length && `import * as roots from './roots'\n\n`) || ''}export const kUris${this._type === 'ts' && ': Record<string, any>' || ''} = {\n${uris}\n}\n\nexport * from './roots'\n`
     }
 
     Utils.writeFile(dest, content)
